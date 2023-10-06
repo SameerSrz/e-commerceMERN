@@ -2,10 +2,12 @@ import React from 'react'
 import { headerLogo } from '../assets/images'
 import { hamburger } from '../assets/icons'
 import { navLinks } from '../Constants/index'
+import { Link } from 'react-router-dom'
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 const Navbar = () => {
   return (
-    <header className='padding-x py-8 absolute z-10 w-full'>
+    <header className='padding-x py-8 absolute z-10 w-full dark:bg-gray-900 dark:text-gray-50'>
       <nav className='flex justify-between items-center max-container'>
         <a href="/">
           <img src={headerLogo} alt="Logo" width={130} height={29} />
@@ -14,15 +16,16 @@ const Navbar = () => {
           {
             navLinks.map((item)=> (
               <li key={item.label}>
-                  <a href={item.href} className='fonts-montserrat leading-normal text-lg text-slate-gray'>
+                  <Link to={item.href} className='fonts-montserrat leading-normal text-lg text-slate-gray dark:text-gray-50'>
                     {item.label}
-                  </a>
+                  </Link>
               </li>
             ))
           }
         </ul>
         <div className='hidden max-lg:block'>
-          <img src={hamburger} alt="hamburger" width={25} height={25} />
+          <GiHamburgerMenu size={30}/>
+          {/* <img src={hamburger} alt="hamburger" className='dark:bg-gray-800 dark:gray-50' width={25} height={25} /> */}
         </div>
       </nav>
     </header>

@@ -7,6 +7,8 @@ import Services from "./Services";
 import PopularProducts from "./PopularProducts";
 import SpecialOffer from "./SpecialOffer";
 import SuperQuality from "./SuperQuality";
+import Contact from "./Contact";
+import ProductCard from "./ProductCard";
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   PopularProducts,
   SpecialOffer,
   SuperQuality,
+  Contact,
+  ProductCard,
 };
