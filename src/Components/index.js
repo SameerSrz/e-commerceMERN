@@ -9,6 +9,8 @@ import SpecialOffer from "./SpecialOffer";
 import SuperQuality from "./SuperQuality";
 import Contact from "./Contact";
 import ProductCard from "./ProductCard";
+import AboutUs from "./AboutUs";
+import ProductDetail from "./ProductDetail";
 
 export {
   Navbar,
@@ -22,4 +24,6 @@ export {
   SuperQuality,
   Contact,
   ProductCard,
+  AboutUs,
+  ProductDetail,
 };

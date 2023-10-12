@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProductCard = ({product}) => {
   console.log(product)
   return (
     <div className="max-w-xs p-6 rounded-lg ring-1 shadow-lg dark:bg-gray-900 dark:text-gray-50">
-	<img src={product.image_Url[0].url} alt="" className="object-cover object-center w-full rounded-lg h-72 dark:bg-gray-500" />
-	<div className="mt-6 mb-2">
+      <Link to={`/product-detail/${product.id}`}>
+	      <img src={product.image_Url[0].url} alt="" className="object-cover object-center w-full rounded-lg h-72 dark:bg-gray-500" />
+	    </Link>
+  <div className="mt-6 mb-2">
 		<span className="block text-xs font-medium tracki uppercase dark:text-violet-400">{product.shop.name}</span>
-		<h2 className="text-xl font-semibold tracki">{product.name}</h2>
+		<Link to={`/product-detail/${product.id}`} className="text-xl font-semibold tracki">{product.name}</Link>
 	</div>
   <div>
     <h4>
