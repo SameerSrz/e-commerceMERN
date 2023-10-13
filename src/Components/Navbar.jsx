@@ -9,9 +9,14 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navbar = () => {
   const [active, isActive] = useState(false);
   const params = useLocation();
-  
+
   return (
-    <header className={`${params.pathname === "/sign-up" && "backdrop-blur-sm bg-slate-300/30"} padding-x py-8 absolute z-10 w-full  dark:text-gray-50`}>
+    <header
+      className={`${
+        params.pathname === "/sign-up" | params.pathname === "/sign-in" &&
+        "backdrop-blur-sm bg-slate-300/30"
+      } padding-x py-8 absolute z-10 w-full  dark:text-gray-50`}
+    >
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img src={headerLogo} alt="Logo" width={130} height={29} />
