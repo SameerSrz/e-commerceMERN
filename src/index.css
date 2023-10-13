@@ -12,6 +12,10 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;
