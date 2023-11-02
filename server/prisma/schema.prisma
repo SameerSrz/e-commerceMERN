@@ -33,6 +33,7 @@ model item {
   name        String        @db.Text
   category_id Int
   price       Float
+  discountPrice       Float
   description String?       @db.Text
   image       String        @db.Text
   category    category      @relation(fields: [category_id], references: [ID], onDelete: Cascade, map: "category_id")

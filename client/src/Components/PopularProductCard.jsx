@@ -1,6 +1,7 @@
 import React from "react";
 import { star } from "../assets/icons";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import toast from "react-hot-toast";
 
 const PopularProductCard = ({ imgURL, name, price }) => {
   const handleClick = () => {
@@ -23,7 +24,10 @@ const PopularProductCard = ({ imgURL, name, price }) => {
       cartItems.push(product);
     }
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    toast.success("Product added to cart");
+
   };
+  
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full">
       <img src={imgURL} alt={name} className="w-[282px] h-[282px]" />

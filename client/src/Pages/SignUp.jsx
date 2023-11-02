@@ -36,7 +36,6 @@ const SignUp = () => {
       })
     }
   };
-  console.log(formData);
 
   return (
     <div

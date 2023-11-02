@@ -9,6 +9,7 @@ import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 import ProductPage from './Pages/ProductPage';
 import { Toaster } from 'react-hot-toast';
+// import Dashboard from './Pages/Admin/Dashboard';
 
 
 const App = () => {

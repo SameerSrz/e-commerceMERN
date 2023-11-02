@@ -1,21 +1,24 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { toast, Toaster } from "react-hot-toast";
 import CartItem from "./CartItem";
-import { orderItems } from "../Constants";
+import { increment, decrement } from "../redux/cartSlice"; 
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = ({ isActive, setIsActive }) => {
   
   let total = 0;
   const [items, setItems] = useState([]);
+  // const { value } = useSelector(state => state.cart)
+  // const dispatch = useDispatch
 
   useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("cartItems")); // Use a different variable name here
+    const storedItems = JSON.parse(localStorage.getItem("cartItems")); 
     if (storedItems) {
-      setItems(storedItems); // Update the state with the parsed items
+      setItems(storedItems); 
     }
-    handleTotal();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+    // handleTotal();
+  }, []); 
   const handleTotal = ()=>{
     items.map((item)=>{
       total = total + item.price;
@@ -27,7 +30,7 @@ const Cart = ({ isActive, setIsActive }) => {
       <>
         <Toaster />
         {items.length !== 0 ? (
-          <div className="fixed top-4 right-0 z-50 w-[32%] border border-red-500 h-[95%] shadow-xl backdrop-blur-sm bg-black/30 rounded-lg m-2 flex flex-col items-start justify-between delay-150 ease-in-out text-white overflow-y-scroll">
+          <div className="fixed top-4 right-0 z-50 w-[32%] border border-red-500 h-[95%] shadow-xl backdrop-blur-sm bg-black/30 rounded-lg m-2 flex flex-col items-start justify-between delay-150 ease-in-out text-white overflow-y-scroll ">
             <div className="w-full p-5 flex flex-row items-center justify-between">
               <h1 className="w-full text-3xl font-semibold">Your Cart</h1>
               <AiOutlineClose
@@ -36,7 +39,7 @@ const Cart = ({ isActive, setIsActive }) => {
               />
             </div>
             {items.length !== 0 && (
-              <div className="w-full h-[35%] p-5 flex flex-col items-center justify-center space-y-3">
+              <div className="w-full h-[50%] p-5 flex flex-col items-center justify-center space-y-3">
                 {items.map((item, idx) => (
                   <CartItem key={idx} item={item} />
                 ))}
@@ -47,7 +50,7 @@ const Cart = ({ isActive, setIsActive }) => {
                   <button
                     type="button"
                     // onClick={handleOrder}
-                    className="w-full px-5 py-3 text-white font-semibold rounded-lg bg-red-600 flex flex-row items-center justify-center space-x-3"
+                    className="w-full mb-3 px-5 py-3 text-white font-semibold rounded-lg bg-red-600 flex flex-row items-center justify-center space-x-3"
                   >
                     <span>Checkout</span>
                   </button>

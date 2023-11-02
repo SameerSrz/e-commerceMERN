@@ -22,6 +22,7 @@ app.use(express.urlencoded({ limit: "200mb", extended: true }));
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/products", require("./routes/productRoutes"))
 
 // Start Server
 const PORT = process.env.PORT || 5001;

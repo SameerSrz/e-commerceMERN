@@ -4,6 +4,7 @@ import { products } from "../Constants";
 import PopularProductCard from "../Components/PopularProductCard";
 
 const Products = () => {
+  // const { products } = 
   return (
     <>
       {/* <div className="relative dark:bg-gray-900 dark:text-gray-50">
